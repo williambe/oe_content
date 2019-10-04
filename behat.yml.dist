@@ -40,6 +40,7 @@ default:
         teaser form element: ".field--name-oe-teaser"
         summary form element: ".field--name-oe-summary"
         Online link: "#edit-oe-event-online-link-0"
+        Social media links: "#oe-event-social-media-links-values"
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.messages--error'
