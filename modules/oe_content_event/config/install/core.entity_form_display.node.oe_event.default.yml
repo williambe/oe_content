@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.oe_event.oe_event_registration_url
     - field.field.node.oe_event.oe_event_report_summary
     - field.field.node.oe_event.oe_event_report_text
+    - field.field.node.oe_event.oe_event_social_media_links
     - field.field.node.oe_event.oe_event_start_date
     - field.field.node.oe_event.oe_event_status
     - field.field.node.oe_event.oe_event_type
@@ -40,6 +41,7 @@ dependencies:
     - path
     - rdf_skos
     - text
+    - typed_link
 third_party_settings:
   field_group:
     group_online:
@@ -50,7 +52,7 @@ third_party_settings:
         - oe_event_online_description
         - oe_event_online_link
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: details
       format_settings:
         id: ''
@@ -65,7 +67,7 @@ third_party_settings:
         - oe_event_organiser_name
         - oe_event_organiser_internal
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: details
       format_settings:
         id: ''
@@ -82,7 +84,7 @@ third_party_settings:
         - oe_event_featured_media_legend
         - body
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details
       format_settings:
         id: ''
@@ -97,7 +99,7 @@ third_party_settings:
         - oe_event_report_summary
         - oe_event_report_text
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details
       format_settings:
         id: ''
@@ -116,7 +118,7 @@ third_party_settings:
         - oe_event_entrance_fee
         - oe_event_registration_capacity
       parent_name: ''
-      weight: 13
+      weight: 14
       format_type: details
       format_settings:
         id: ''
@@ -129,7 +131,7 @@ third_party_settings:
     group_media:
       children: {  }
       parent_name: ''
-      weight: 26
+      weight: 27
       format_type: details
       format_settings:
         id: ''
@@ -155,32 +157,19 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
-  oe_event_venue:
-    weight: 8
-    settings:
-      form_mode: default
-      revision: true
-      label_singular: ''
-      label_plural: ''
-      override_labels: false
-      collapsible: false
-      collapsed: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
-    region: content
   langcode:
     type: language_select
-    weight: 14
+    weight: 15
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   oe_author:
-    weight: 15
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -190,7 +179,7 @@ content:
     region: content
   oe_content_content_owner:
     type: skos_concept_entity_reference_autocomplete
-    weight: 16
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -199,7 +188,7 @@ content:
     third_party_settings: {  }
   oe_content_legacy_link:
     type: link_default
-    weight: 17
+    weight: 18
     region: content
     settings:
       placeholder_url: ''
@@ -207,7 +196,7 @@ content:
     third_party_settings: {  }
   oe_content_navigation_title:
     type: string_textfield
-    weight: 19
+    weight: 20
     region: content
     settings:
       size: 60
@@ -215,7 +204,7 @@ content:
     third_party_settings: {  }
   oe_content_short_title:
     type: string_textfield
-    weight: 18
+    weight: 19
     region: content
     settings:
       size: 60
@@ -364,6 +353,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  oe_event_social_media_links:
+    type: typed_link
+    weight: 8
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   oe_event_start_date:
     weight: 1
     settings: {  }
@@ -381,6 +378,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  oe_event_venue:
+    weight: 9
+    settings:
+      form_mode: default
+      revision: true
+      label_singular: ''
+      label_plural: ''
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
     region: content
   oe_event_website:
     weight: 6
@@ -414,7 +424,7 @@ content:
     region: content
   path:
     type: path
-    weight: 25
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -422,21 +432,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 22
+    weight: 23
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 24
+    weight: 25
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 23
+    weight: 24
     region: content
     third_party_settings: {  }
   title:
@@ -457,7 +467,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 20
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: 60
