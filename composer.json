@@ -1,5 +1,5 @@
 {
-    "name": "openeuropa/oe_content",
+    "name": "williambe/oe_content",
     "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
     "type": "drupal-module",
     "license": "EUPL-1.2",
